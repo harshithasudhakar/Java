@@ -12,10 +12,10 @@ class Palindrome{
         }
         if(n==y){
             return true;
-            }
+        }
         else{
             return false;
-            }
+        }
     }
 
     public static void main(String[] args){
