@@ -4,23 +4,23 @@ import java.util.Scanner;
 class HappyNumber {
     int n = 0;
 
-    public void splitDigits(int x) {
-        n = 0; // Reset the value of n
+    public int splitDigits(int x) {
+        n = 0; // Resetting n to 0 before splitting the digits
         while (x > 0) {
             int a = x % 10;
             x = x / 10;
             n += a * a;
         }
+        return n;
     }
 
-    boolean isHappy() {
+    public boolean isHappy() {
         int slow = n;
         int fast = n;
 
         do {
-            splitDigits(slow);
-            splitDigits(fast);
-            splitDigits(fast);
+            slow = splitDigits(slow);
+            fast = splitDigits(splitDigits(fast));
         } while (slow != fast);
 
         return slow == 1;
@@ -31,6 +31,12 @@ class HappyNumber {
         int x = input.nextInt();
         HappyNumber obj = new HappyNumber();
         obj.splitDigits(x);
-        System.out.println(obj.isHappy());
+        boolean isHappy = obj.isHappy();
+
+        if (isHappy) {
+            System.out.println(x + " is a happy number");
+        } else {
+            System.out.println(x + " is not a happy number");
+        }
     }
 }
