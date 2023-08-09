@@ -1,4 +1,3 @@
-
 //Pattern-1
 
 /*
@@ -10,7 +9,7 @@
 *****
 
 */
-/*
+
 import java.util.Scanner;
 
 class Pattern{
@@ -31,8 +30,6 @@ class Pattern{
 	}
 }
 
-*/
-
 //Pattern-2
 /*
 1
@@ -41,7 +38,7 @@ class Pattern{
 7 8 9 10
 11 12 13 14
 */
-/*
+
 import java.util.Scanner;
 
 class Pattern{
@@ -61,7 +58,6 @@ class Pattern{
 		obj.printpattern1(n);
 	}
 }
-*/
 
 //Pattern-3
 /*
