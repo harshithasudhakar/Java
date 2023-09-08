@@ -1,1 +1,1 @@
-# Practice Questions on Arrays
+# Arrays
