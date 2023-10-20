@@ -1,4 +1,3 @@
-
 class Node{
 	int value;
 	Node next;
@@ -13,7 +12,7 @@ class LinkedListOperations{
 	
 	Node head;
 	
-	public void insertingAtBeginning(){
+	public void insertingAtBeginning(int value){
 		
 		Node newNode = new Node(value);
 		newNode.next = head;
