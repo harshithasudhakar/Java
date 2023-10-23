@@ -8,21 +8,19 @@ class Node{
     }
 }
 class QueueImplementationUsingSinglyLinkedList{
-
-    Node head;
+	
+	Node head;
 	Node tail;
-   
-    public void insert(int value){
-       
-	   Node newNode = new Node(value);
-	   
-	   if(tail==null){
-		   tail = newNode;
-		   head = newNode;
-	   }
-	   tail = newNode.next;
-	   tail = newNode;
-        
+	
+	public void insert(int value){
+		
+		Node newNode = new Node(value);
+		if(tail==null){
+			tail = newNode;
+			head = newNode;
+		}
+		tail = newNode.next;
+		tail = newNode;
     }
 	
 	public void remove(){
