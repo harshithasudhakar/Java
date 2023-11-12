@@ -55,7 +55,7 @@ class LinkedListOperations{
 		return 0;
 	}
 	
-	public void intesertAtNextNode(int key, int value){
+	public void insertAtNextNode(int key, int value){
 		
 		Node temp = head;
 		Node newNode = new Node(value);
