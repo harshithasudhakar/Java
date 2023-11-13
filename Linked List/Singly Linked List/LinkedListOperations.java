@@ -46,26 +46,34 @@ class LinkedListOperations{
 	public int search(int value){
 		
 		Node temp = head;
+		int index = 0;
 		while(temp!=null){
 			if(temp.value == value){
-				return temp.value;
+				System.out.println(value + " found at index: " + index);
+				return index;
 			}
 			temp = temp.next;
+			index++;
 		}
-		return 0;
+		System.out.println(value + " not found in the list");
+		return -1; // if element not found in the list
 	}
 	
-	public void insertAtNextNode(int key, int value){
+	public void insertAtNode(int key, int value){
 		
 		Node temp = head;
+		int index = 0;
 		Node newNode = new Node(value);
-		while(temp!=null && temp.value!=key){
+		if(key==0){
+			insertingAtBeginning(value);
+			return;
+		}
+		while(temp!=null && index != key-1){
 			temp = temp.next;
+			index++;
 		}
-		if(temp.value == key){
-			newNode.next = temp.next;
-			temp.value = newNode;
-		}
+		newNode.next = temp.next;
+		temp.next = newNode;
 	}
 	
 	public void deletingElement(int value){
@@ -74,12 +82,11 @@ class LinkedListOperations{
 		if(head == null){
 			return;
 		}
-		while(temp!=null && temp.value!=value){
+		while(temp!=null && temp.next.value!=value){
 			temp = temp.next;
 		}
-		if(temp.next == value){
-			temp.value = temp.next.next;
-			temp.next = null;
+		if(temp.next != null && temp.next.value == value){
+			temp.next = temp.next.next;
 		}
 	}
 	
@@ -102,9 +109,11 @@ class LinkedListOperations{
 		System.out.println("List after deleting the end elements:");
 		list.display();
 		
+		System.out.println("Searching for 8 and 50:");
 		list.search(8);
+		list.search(50);
 		
-		list.intesertAtNextNode(4, 47);
+		list.insertAtNode(4, 47);
 		list.display();
 		
 		System.out.println("List after deleting 11:");
@@ -114,9 +123,3 @@ class LinkedListOperations{
 		
 	}
 }
-
-
-
-
-
-
