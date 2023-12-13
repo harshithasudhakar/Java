@@ -77,16 +77,19 @@ public class BinarySearchTree {
         }
         else{
             search(value);
+            //If the node to deleted is a leaf node
             if(current.right == null && current.left == null){
                 current = null;
                 System.out.println(value + " deleted");
                 return;
             }
+            //If the node to be deleted has a single child
             if(current.right == null && current.left != null || current.right !=null && current.left == null ){
                 current.right = current.left = null;
                 System.out.println(value + " deleted");
                 return;
             }
+            //If the node to be deleted has both children
             if(current.right != null && current.left != null){
                 while(true){
                     if(current.right != null){
@@ -110,7 +113,7 @@ public class BinarySearchTree {
     }
 
     public static void main(String[] args){
-        
+
         BinarySearchTree bst = new BinarySearchTree();
 
         bst.insert(8);
@@ -123,18 +126,17 @@ public class BinarySearchTree {
         bst.insert(5);
         bst.insert(10);
         System.out.println();
-        
+
         bst.search(10);
         bst.search(17);
         bst.search(2);
         bst.search(23);
         bst.search(48);
         System.out.println();
-        
+
         bst.delete(23);
         bst.delete(2);
         bst.delete(6);
         bst.delete(12);
-        System.out.println();
     }
 }
