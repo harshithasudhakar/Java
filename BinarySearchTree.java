@@ -122,15 +122,15 @@ public class BinarySearchTree {
         bst.insert(7);
         bst.insert(5);
         bst.insert(10);
-
         System.out.println();
+        
         bst.search(10);
         bst.search(17);
         bst.search(2);
         bst.search(23);
         bst.search(48);
         System.out.println();
-
+        
         bst.delete(23);
         bst.delete(2);
         bst.delete(6);
