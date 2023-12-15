@@ -1,4 +1,3 @@
-// Binary tree creation using array and pre-order traversal
 import java.util.Scanner;
 class Node{
     int value;
@@ -47,6 +46,22 @@ public class BinaryTreeTraversal{
         }
     }
 
+    public void inorder(Node current){
+        if(current != null){
+            inorder(current.left);
+            System.out.print(current.value + " ");
+            inorder(current.right);
+        }
+    }
+
+    public void postorder(Node current){
+        if(current != null){
+            postorder(current.left);
+            postorder(current.right);
+            System.out.print(current.value + " ");
+        }
+    }
+
     public static void main(String[] args){
         
         Scanner input = new Scanner(System.in);
@@ -65,5 +80,12 @@ public class BinaryTreeTraversal{
         System.out.println("Pre-order Traversal: ");
         bbt.preorder(root);
 
+        System.out.println();
+        System.out.println("In-order Traversal: ");
+        bbt.inorder(root);
+
+        System.out.println();
+        System.out.println("Post-order Traversal: ");
+        bbt.postorder(root);
     }
 }
