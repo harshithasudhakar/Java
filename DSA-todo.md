@@ -14,6 +14,7 @@
   - [x] Pre-order Traversal
   - [x] In-order Traversal
   - [x] Post-order Traversal
+- [ ] Adelson-Velsky and Landis Tree (AVL)
 - [ ] Sorting
   - [ ] Bubble Sort
   - [ ] Selection Sort
