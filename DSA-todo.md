@@ -1,5 +1,7 @@
 # List of Topics
 
+- [x] Time Complexity
+- [x] Space Complexity
 - [x] Stack
 - [ ] Queue
   - [ ] Circular Queue
