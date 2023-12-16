@@ -6,14 +6,14 @@
   - [ ] Dequeue
   - [ ] Priority Queue
 - [ ] Linked List
-  - [ ] Singly-Linked List
-  - [ ] Doubly-Linked List
+  - [x] Singly-Linked List
+  - [x] Doubly-Linked List
   - [ ] Circular-Linked List
-- [ ] Binary Search Tree (BST)
-- [ ] Binary Tree
-  - [ ] Pre-order Traversal
-  - [ ] In-order Traversal
-  - [ ] Post-order Traversal
+- [x] Binary Search Tree (BST)
+- [x] Binary Tree
+  - [x] Pre-order Traversal
+  - [x] In-order Traversal
+  - [x] Post-order Traversal
 - [ ] Sorting
   - [ ] Bubble Sort
   - [ ] Selection Sort
