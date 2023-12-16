@@ -1,0 +1,40 @@
+# List of Topics
+
+- [x] Stack
+- [ ] Queue
+  - [ ] Circular Queue
+  - [ ] Dequeue
+  - [ ] Priority Queue
+- [ ] Linked List
+  - [ ] Singly-Linked List
+  - [ ] Doubly-Linked List
+  - [ ] Circular-Linked List
+- [ ] Binary Search Tree (BST)
+- [ ] Binary Tree
+  - [ ] Pre-order Traversal
+  - [ ] In-order Traversal
+  - [ ] Post-order Traversal
+- [ ] Sorting
+  - [ ] Bubble Sort
+  - [ ] Selection Sort
+  - [ ] Insertion Sort
+  - [ ] Quick Sort
+  - [ ] Merge Sort
+  - [ ] Heap Sort
+- [ ] Searching
+  - [ ] Linear Search
+  - [ ] Binary search
+  - [ ] Hashing
+    - [ ] Open Hashing
+    - [ ] Linear Probing
+    - [ ] Quadratic Probing
+    - [ ] Double Hash
+    - [ ] Re-Hash
+- [ ]  Graphs
+  - [ ]  Breadth-First-Search (BFS)
+  - [ ]  Depth-First-Search (DFS)
+  - [ ]  Shortest-Path
+    - [ ]  Dijkstra's Algorithm
+  - [ ]  Minimum Spanning Tree (MST)
+    - [ ]  Prim's Algorithm
+    - [ ]  Kruskal's Algorithm
