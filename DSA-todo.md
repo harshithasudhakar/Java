@@ -3,8 +3,8 @@
 - [x] Stack
 - [ ] Queue
   - [ ] Circular Queue
-  - [ ] Dequeue
-  - [ ] Priority Queue
+  - [ ] Dequeue (Phase - II)
+  - [ ] Priority Queue (Phase - II)
 - [ ] Linked List
   - [x] Singly-Linked List
   - [x] Doubly-Linked List
@@ -15,6 +15,7 @@
   - [x] In-order Traversal
   - [x] Post-order Traversal
 - [ ] Adelson-Velsky and Landis Tree (AVL)
+- [ ] Red-Black Tree (Phase - II)
 - [ ] Sorting
   - [ ] Bubble Sort
   - [ ] Selection Sort
@@ -22,6 +23,8 @@
   - [ ] Quick Sort
   - [ ] Merge Sort
   - [ ] Heap Sort
+  - [ ] Counting Sort (Phase - II)
+  - [ ] Radix Sort (Phase - II)
 - [ ] Searching
   - [ ] Linear Search
   - [ ] Binary search
@@ -29,8 +32,8 @@
     - [ ] Open Hashing
     - [ ] Linear Probing
     - [ ] Quadratic Probing
-    - [ ] Double Hash
-    - [ ] Re-Hash
+    - [ ] Double Hash (Phase - II)
+    - [ ] Re-Hash (Phase - II)
 - [ ]  Graphs
   - [ ]  Breadth-First-Search (BFS)
   - [ ]  Depth-First-Search (DFS)
