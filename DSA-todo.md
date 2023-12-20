@@ -19,7 +19,7 @@
 - [ ] Adelson-Velsky and Landis Tree (AVL)
 - [ ] Red-Black Tree (Phase - II)
 - [ ] Sorting
-  - [ ] Bubble Sort
+  - [x] Bubble Sort
   - [ ] Selection Sort
   - [ ] Insertion Sort
   - [ ] Quick Sort
