@@ -6,11 +6,11 @@ class MinStringLength {
         Stack<Character> stack = new Stack<>();
         stack.push(s.charAt(0));
         for(int i = 1; i<s.length(); i++){
-            if(stack.peek() == 'A' && s.charAt(i) == 'B'){
+            if(!stack.isEmpty() && stack.peek() == 'A' && s.charAt(i) == 'B'){
                 stack.pop();
                 continue;
             }
-            if(stack.peek() == 'C' && s.charAt(i) == 'D'){
+            if(!stack.isEmpty() && stack.peek() == 'C' && s.charAt(i) == 'D'){
                 stack.pop();
                 continue;
             }
