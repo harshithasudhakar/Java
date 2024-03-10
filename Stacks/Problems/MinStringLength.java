@@ -4,18 +4,17 @@ import java.util.Stack;
 class MinStringLength {
     public static int minLength(String s) {
         Stack<Character> stack = new Stack<>();
-        stack.push(s.charAt(0));
-        for(int i = 1; i<s.length(); i++){
-            if(stack.peek() == 'A' && s.charAt(i) == 'B'){
+        for(int i = 0; i<s.length(); i++){
+            stack.push(s.charAt(i));
+            if(s.charAt(i) == 'A' && s.charAt(i+1) == 'B'){
                 stack.pop();
+                i++; 
                 continue;
             }
-            if(stack.peek() == 'C' && s.charAt(i) == 'D'){
+            if(s.charAt(i) == 'C' && s.charAt(i+1) == 'D'){
                 stack.pop();
+                i++; 
                 continue;
-            }
-            else{
-                stack.push(s.charAt(i));
             }
         }
         return lengthOfStack(stack);
