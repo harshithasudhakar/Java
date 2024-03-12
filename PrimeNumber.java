@@ -3,7 +3,7 @@
 import java.util.Scanner;
 
 class PrimeNumber{
-	void checkIfPrime(int n){
+	boolean checkIfPrime(int n){
 		int count=0;
 		for(int i=1;i<=n;i++){
 			if(n%i==0){
@@ -15,9 +15,11 @@ class PrimeNumber{
 		}
 		if(count<=2){
 			System.out.println("The number is a prime number");
+			return true;
 		}
 		else{
 			System.out.println("The number is a composite number");
+			return false;
 		}
 	}
 	
