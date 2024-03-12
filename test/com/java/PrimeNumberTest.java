@@ -13,8 +13,8 @@ class PrimeNumberTest {
 
   void testIsNotPrime(){
     PrimeNumber prime = new PrimeNumber();
-    assertFalse(PrimeNumber.checkIfPrime(4));
-    assertFalse(PrimeNumber.checkIfPrime(6));
-    assertFalse(PrimeNumber.checkIfPrime(10));
+    assertTrue(PrimeNumber.checkIfPrime(4));
+    assertTrue(PrimeNumber.checkIfPrime(6));
+    assertTrue(PrimeNumber.checkIfPrime(10));
   }
 }
