@@ -10,4 +10,11 @@ class PrimeNumberTest {
     assertTrue(PrimeNumber.checkIfPrime(3));
     assertTrue(PrimeNumber.checkIfPrime(7));
   }
+
+  void testIsNotPrime(){
+    PrimeNumber prime = new PrimeNumber();
+    assertTrue(PrimeNumber.checkIfPrime(4));
+    assertTrue(PrimeNumber.checkIfPrime(6));
+    assertTrue(PrimeNumber.checkIfPrime(10));
+  }
 }
