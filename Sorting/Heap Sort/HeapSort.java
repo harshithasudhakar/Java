@@ -1,6 +1,6 @@
 import java.utils.Scanner;
 
-public class HeapSort(){
+public class HeapSort {
 
     void maxHeap(){
         if (length == 0) {
