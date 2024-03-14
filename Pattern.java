@@ -56,10 +56,11 @@ class Pattern{
 				System.out.print(" ");
 			}
 			for (int k=1; k<=i; k++) {
-                System.out.print(num+ " ");
-                num++;
-            }
-		System.out.println();
+				System.out.print(num+ " ");
+				num++;
+			}
+			System.out.println();
+		}
 	}
 	public static void main(String[] args){
 		Scanner input= new Scanner(System.in);
