@@ -10,10 +10,8 @@
 
 */
 
-import java.util.Scanner;
-
 class Pattern{
-	void printpattern1(int n){
+	void printPattern1(int n){
 		String ch="*";
 		for(int i=1;i<=n;i++){
 			for(int j=1;j<=i;j++){
@@ -22,13 +20,6 @@ class Pattern{
 			System.out.println("");
 		}
 	}
-	public static void main(String[] args){
-		Scanner input= new Scanner(System.in);
-		int n= input.nextInt();
-		Pattern obj = new Pattern();
-		obj.printpattern1(n);
-	}
-}
 
 //Pattern-2
 /*
@@ -38,11 +29,7 @@ class Pattern{
 7 8 9 10
 11 12 13 14
 */
-
-import java.util.Scanner;
-
-class Pattern{
-	void printpattern1(int n){
+	void printPattern2(int n){
 		int num=1;
 		for(int i=1;i<=n;i++){
 			for(int j=1;j<=i;j++){
@@ -51,13 +38,6 @@ class Pattern{
 			System.out.println("");
 		}
 	}
-	public static void main(String[] args){
-		Scanner input= new Scanner(System.in);
-		int n= input.nextInt();
-		Pattern obj = new Pattern();
-		obj.printpattern1(n);
-	}
-}
 
 //Pattern-3
 /*
@@ -69,11 +49,7 @@ class Pattern{
  
 */
 
-import java.util.Scanner;
-
-class Pattern{
-	
-	void printpattern1(int n){
+	void printPattern3(int n){
 		int num=1;
 		for(int i=1;i<=n;i++){
 			for(int j=1;j<=n-i;j++){
@@ -83,14 +59,14 @@ class Pattern{
                 System.out.print(num+ " ");
                 num++;
             }
-			System.out.println();
-		}
+		System.out.println();
 	}
-		
 	public static void main(String[] args){
 		Scanner input= new Scanner(System.in);
 		int n= input.nextInt();
 		Pattern obj = new Pattern();
-		obj.printpattern1(n);
+		obj.printPattern1(n);
+		obj.printPattern2(n);
+		obj.printPattern3(n);
 	}
 }
