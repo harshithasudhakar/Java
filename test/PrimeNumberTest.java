@@ -1,20 +1,21 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class PrimeNumberTest {
+public class PrimeNumberTest {
 
   @Test
-  void testIsPrime(){
+  public void testIsPrime(){
     PrimeNumber prime = new PrimeNumber();
     assertTrue(prime.checkIfPrime(2));
     assertTrue(prime.checkIfPrime(3));
     assertTrue(prime.checkIfPrime(7));
   }
 
-  void testIsNotPrime(){
+  @Test
+  public void testIsNotPrime(){
     PrimeNumber prime = new PrimeNumber();
-    assertTrue(prime.checkIfPrime(4));
-    assertTrue(prime.checkIfPrime(6));
-    assertTrue(prime.checkIfPrime(10));
+    assertFalse(prime.checkIfPrime(4));
+    assertFalse(prime.checkIfPrime(6));
+    assertFalse(prime.checkIfPrime(10));
   }
 }
