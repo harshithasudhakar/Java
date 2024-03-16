@@ -14,8 +14,8 @@ public class PrimeNumberTest {
   @Test
   public void testIsNotPrime(){
     PrimeNumber prime = new PrimeNumber();
-    assertTrue(prime.checkIfPrime(4));
-    assertTrue(prime.checkIfPrime(6));
-    assertTrue(prime.checkIfPrime(10));
+    assertFalse(prime.checkIfPrime(4));
+    assertFalse(prime.checkIfPrime(6));
+    assertFalse(prime.checkIfPrime(10));
   }
 }
