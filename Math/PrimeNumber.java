@@ -5,6 +5,10 @@ import java.util.Scanner;
 class PrimeNumber{
 	boolean checkIfPrime(int n){
 		int count=0;
+		if(n <= 1){
+			throw new IllegalArgumentException("Invalid input.");
+			return false;
+		}
 		for(int i=1;i<=n;i++){
 			if(n%i==0){
 				count+=1;
