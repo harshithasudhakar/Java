@@ -25,14 +25,14 @@ public class PrimeNumberTest {
     assertthrows(IllegalArgumentException.class,
                 () -> {
                   prime.checkIfPrime(-1);
-                })
+                });
     assertthrows(IllegalArgumentException.class,
                 () -> {
                   prime.checkIfPrime(0);
-                })
+                });
     assertthrows(IllegalArgumentException.class,
                 () -> {
                   prime.checkIfPrime(1);
-                })
+                });
   }
 }
