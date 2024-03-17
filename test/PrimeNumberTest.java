@@ -22,15 +22,15 @@ public class PrimeNumberTest {
   @Test
   public void testNorPrimeNorComposite(){
     PrimeNumber prime = new PrimeNumber();
-    assertthrows(IllegalArgumentException.class,
+    assertThrows(IllegalArgumentException.class,
                 () -> {
                   prime.checkIfPrime(-1);
                 });
-    assertthrows(IllegalArgumentException.class,
+    assertThrows(IllegalArgumentException.class,
                 () -> {
                   prime.checkIfPrime(0);
                 });
-    assertthrows(IllegalArgumentException.class,
+    assertThrows(IllegalArgumentException.class,
                 () -> {
                   prime.checkIfPrime(1);
                 });
