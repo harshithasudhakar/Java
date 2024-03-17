@@ -7,7 +7,6 @@ class PrimeNumber{
 		int count=0;
 		if(n <= 1){
 			throw new IllegalArgumentException("Invalid input.");
-			return false;
 		}
 		for(int i=1;i<=n;i++){
 			if(n%i==0){
