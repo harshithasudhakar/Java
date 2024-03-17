@@ -18,4 +18,21 @@ public class PrimeNumberTest {
     assertFalse(prime.checkIfPrime(6));
     assertFalse(prime.checkIfPrime(10));
   }
+
+  @Test
+  public void testNorPrimeNorComposite(){
+    PrimeNumber prime = new PrimeNumber();
+    assertthrows(IllegalArgumentException.class,
+                () -> {
+                  prime.checkIfPrime(-1);
+                })
+    assertthrows(IllegalArgumentException.class,
+                () -> {
+                  prime.checkIfPrime(0);
+                })
+    assertthrows(IllegalArgumentException.class,
+                () -> {
+                  prime.checkIfPrime(1);
+                })
+  }
 }
