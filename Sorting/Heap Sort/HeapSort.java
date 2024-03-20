@@ -1,4 +1,4 @@
-import java.utils.Scanner;
+import java.util.Scanner;
 
 public class HeapSort {
 

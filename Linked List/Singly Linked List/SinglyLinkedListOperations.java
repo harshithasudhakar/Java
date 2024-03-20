@@ -1,4 +1,5 @@
-class Node{
+class LinkedListOperations{
+	class Node{
 	int value;
 	Node next;
 	
@@ -7,8 +8,6 @@ class Node{
 		this.next = null;
 	}
 }
-
-class LinkedListOperations{
 	
 	Node head;
 	

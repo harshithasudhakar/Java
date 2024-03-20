@@ -17,7 +17,7 @@
     </dependencies>
     
     <build>
-        <sourceDirectory>${project.basedir}/Math</sourceDirectory>
+        <sourceDirectory>${project.basedir}</sourceDirectory>
         <testSourceDirectory>${project.basedir}/test</testSourceDirectory>
         <plugins>
             <plugin>
