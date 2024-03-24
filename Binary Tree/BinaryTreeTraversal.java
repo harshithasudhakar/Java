@@ -1,15 +1,15 @@
 import java.util.Scanner;
-class Node{
-    int value;
-    Node right;
-    Node left;
-    public Node(int value){
-        this.value = value;
-        this.right = this.left = null;
-    }
-}
 
 public class BinaryTreeTraversal{
+    class Node{
+        int value;
+        Node right;
+        Node left;
+        public Node(int value){
+            this.value = value;
+            this.right = this.left = null;
+        }
+    }
 
     static Node root;
     Node current = root;

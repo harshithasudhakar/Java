@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Stack;
 
 class RemoveAdjDuplicatesInString {
     public static String removeDuplicates(String s) {
