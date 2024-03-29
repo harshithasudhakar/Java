@@ -6,7 +6,7 @@
 - [ ] Queue
   - [ ] Circular Queue
   - [ ] Dequeue (Phase - II)
-  - [ ] Priority Queue (Phase - II)
+  - [x] Priority Queue (Phase - II)
 - [ ] Linked List
   - [x] Singly-Linked List
   - [x] Doubly-Linked List
