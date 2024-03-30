@@ -29,7 +29,7 @@
   - [ ] Radix Sort (Phase - II)
 - [ ] Searching
   - [ ] Linear Search
-  - [ ] Binary search
+  - [x] Binary search
   - [ ] Hashing
     - [ ] Open Hashing
     - [ ] Linear Probing
