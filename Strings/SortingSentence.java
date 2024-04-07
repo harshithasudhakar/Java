@@ -1,4 +1,4 @@
-class Solution {
+class SortingSentenceSolution {
     public String sortSentence(String s) {
         String[] words = s.split(" ");
         for(int i = 0; i< words.length-1;i++){
