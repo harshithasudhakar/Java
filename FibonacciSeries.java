@@ -9,9 +9,9 @@ class FibonacciSeries{
 		int t3=2;
 		System.out.println("The series is: 1, 1, 2...");
 		for(int i=3;i<n;i++){
+			t3=t2+t1;
 			t1=t2;
 			t2=t3;
-			t3=t2+t1;
 			System.out.println(t3);
 		}
 	}
