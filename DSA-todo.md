@@ -20,11 +20,11 @@
 - [ ] Red-Black Tree (Phase - II)
 - [ ] Sorting
   - [x] Bubble Sort
-  - [ ] Selection Sort
+  - [x] Selection Sort
   - [ ] Insertion Sort
   - [ ] Quick Sort
   - [ ] Merge Sort
-  - [ ] Heap Sort
+  - [x] Heap Sort
   - [ ] Counting Sort (Phase - II)
   - [ ] Radix Sort (Phase - II)
 - [ ] Searching
