@@ -20,7 +20,8 @@ class Graphs{
     }
 
     static void addEdges(ArrayList<ArrayList<Edge>> graph, int src, int dest){
-        ArrayList<Edge> edges = graph.get(src);
+        ArrayList<Edge> edges = graph.get(src); // not creating a new ArrayList.
+        //Just creating a reference to the ArrayList retruned by get().
         for (Edge e : edges) {
             if (e.dest == dest) {
                 System.out.println("Edge from " + src + " to " + dest + " already exists.");
@@ -31,9 +32,12 @@ class Graphs{
     }
 
     static void deleteEdge(ArrayList<ArrayList<Edge>> graph, int src, int dest){
-        for(int i = 0; i<graph.size(); i++){
-            graph.get(src).remove(src);
-            System.out.println("Edge "+"("+ src +","+dest+ ")" + "deleted.");
+        ArrayList<Edge> edges = graph.get(src);
+        for(int i = 0; i < edges.size(); i++){
+            if(edges.get(i).dest == dest){
+                edges.remove(i);
+                break;
+            }
         }
     }
 
@@ -72,6 +76,17 @@ class Graphs{
         System.out.println("All the edges of the graph are: ");
         getAllEdges(graph);
 
+        System.out.println("Enter source of edge to delete:");
+        int s = input.nextInt();
+        System.out.println("Enter destination of edge to delete:");
+        int d = input.nextInt();
+        if (s >= 0 && s < v && d >= 0 && d < v) {
+            deleteEdge(graph, s, d);
+        } else {
+            System.out.println("Invalid source or destination. Please enter values between 0 and " + (v-1));
+        }
+        System.out.println("The final graph is: ");
+        getAllEdges(graph);
         input.close();
     }
 }
