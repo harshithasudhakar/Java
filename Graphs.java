@@ -20,8 +20,23 @@ class Graphs{
     }
 
     static void addEdges(ArrayList<ArrayList<Edge>> graph, int src, int dest){
-        graph.get(src).add(new Edge(src,dest));
+        ArrayList<Edge> edges = graph.get(src);
+        for (Edge e : edges) {
+            if (e.dest == dest) {
+                System.out.println("Edge from " + src + " to " + dest + " already exists.");
+                return; // Exit the method without adding the edge
+            }
+        }
+        edges.add(new Edge(src, dest)); // Add the edge if it doesn't already exist
     }
+
+    static void deleteEdge(ArrayList<ArrayList<Edge>> graph, int src, int dest){
+        for(int i = 0; i<graph.size(); i++){
+            graph.get(src).remove(src);
+            System.out.println("Edge "+"("+ src +","+dest+ ")" + "deleted.");
+        }
+    }
+
     static void getEdge(ArrayList<ArrayList<Edge>> graph, int v) {
         for (Edge e : graph.get(v)) {
             System.out.println("Edge from " + e.src + " to " + e.dest);
@@ -56,5 +71,7 @@ class Graphs{
 
         System.out.println("All the edges of the graph are: ");
         getAllEdges(graph);
+
+        input.close();
     }
 }
