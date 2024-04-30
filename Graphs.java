@@ -1,5 +1,6 @@
 //Creating and storing a graph
-
+//Assuming vertices are numbered. If they are to be named by alphabets,
+//A HashMap based approach would be required to map the vertices and indices
 import java.util.ArrayList;
 import java.util.Scanner;
 
