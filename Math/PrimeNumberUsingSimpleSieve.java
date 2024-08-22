@@ -4,7 +4,7 @@ class PrimeNumberUsingSimpleSieve{
 
     static void simpleSieve(boolean[] primes, int n){
 
-        for(int p = 2; p*p <= n; p++){
+        for(int p = 2; p*p <= n; p++){ //Start from p*p as the smaller multiples will be marked by the smaller primes
             if(primes[p]){
                 for(int i = p*p; i<=n; i += p){
                     primes[i] = false;
@@ -25,8 +25,8 @@ class PrimeNumberUsingSimpleSieve{
         Scanner input = new Scanner(System.in);
         System.out.println("Enter number upto which prime numbers have to be found: ");
         int n = input.nextInt();
-        boolean[] primes = new boolean[n + 1]; // Use boolean[] and make size n+1
-        Arrays.fill(primes, true); // Initialize all elements to true
+        boolean[] primes = new boolean[n + 1];
+        Arrays.fill(primes, true);
         primes[0] = primes[1] = false; 
 
         simpleSieve(primes, n);
