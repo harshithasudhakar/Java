@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class SegmentedSieve {
+class SegmentedSieve {
     // Function to find all primes up to √n using Simple Sieve
     static ArrayList<Integer> simpleSieve(int limit) {
         boolean[] isPrime = new boolean[limit + 1];
