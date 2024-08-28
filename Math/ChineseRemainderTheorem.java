@@ -1,3 +1,5 @@
+// Finds a unique solution that satifies a set of congruences, given that the moduli of the congruences are co-prime
+
 import java.util.*;
 
 class ChineseRemainderTheorem{
