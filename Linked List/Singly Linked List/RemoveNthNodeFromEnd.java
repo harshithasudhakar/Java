@@ -56,7 +56,7 @@ class RemoveNthNodeFromEnd {
         RemoveNthNodeFromEnd removeNthNodeFromEnd = new RemoveNthNodeFromEnd();
 
         int nodeToRemove = input.nextInt();
-        ListNode newHead = solution.removeNthFromEnd(head, nodeToRemove);
+        ListNode newHead = removeNthNodeFromEnd.removeNthFromEnd(head, nodeToRemove);
 
         current = newHead;
 
