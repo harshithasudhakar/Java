@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class DeleteMiddleNode {
     
     public class ListNode {
