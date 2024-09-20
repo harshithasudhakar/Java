@@ -1,4 +1,4 @@
-import java.util.Scanener;
+import java.util.Scanner;
 
 class FindMiddleNode {
     public class ListNode {
