@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class LargestNumTwiceOfOthers {
     public static int dominantIndex(int[] nums) {
         for(int i = 0; i < nums.length; i++){
