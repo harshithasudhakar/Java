@@ -1,5 +1,6 @@
 // Adjacency List
 // BFS Traversal
+// DFS Traversal
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -61,6 +62,7 @@ class Graphs{
             System.out.println("Edge from " + e.src + " to " + e.dest);
         }
     }
+    
     static void getAllEdges(ArrayList<Edge>[] graph){
         for(int i = 0; i<graph.length; i++){
             ArrayList<Edge> edges = graph[i]; // Retrieve the inner ArrayList of edges
@@ -70,27 +72,60 @@ class Graphs{
         }
     }
 
-    static void bfs(ArrayList<Edge>[] graph, int src){ // Time Complexity: 0(V+E)
-        if (graph == null) return;
+    static void bfs(ArrayList<Edge>[] graph, int src){ // Time Complexity: O(V+E)
+    
+        if (graph == null || graph.length == 0) return; // Ensure graph is valid
+    
+        Queue<Integer> queue = new LinkedList<>(); // Initialize the queue
+        boolean[] visited = new boolean[graph.length]; // Boolean array to track visited nodes
         
-        Queue<Integer> queue = new LinkedList<>();
+        queue.add(src); // Add the starting node to the queue
+        visited[src] = true; // Mark the starting node as visited
+    
+        while(!queue.isEmpty()){ // Loop until the queue is empty
+            int curr = queue.remove(); // Remove the front node in the queue
+            System.out.print(curr + " "); // Print the current node
+    
+            // Iterate through all the adjacent nodes (edges) of the current node
+            for(int i = 0; i < graph[curr].size(); i++){
+                int neighbor = graph[curr].get(i).dest; // Get the destination vertex (neighbor)
+                
+                if (!visited[neighbor]) { // Only add unvisited neighbors to the queue
+                    queue.add(neighbor); // Add the neighbor to the queue
+                    visited[neighbor] = true; // Mark the neighbor as visited
+                }
+            }
+        }
+    }    
 
-        boolean[] visited = new boolean[graph.length];
+    static void dfs(ArrayList<Edge>[] graph, int v) { // Time Complexity: O(V+E)
 
-        queue.add(src);
-
-        while(!queue.isEmpty()){
-            int curr = queue.remove();
-            System.err.println(curr);
-            if(!visited[curr]){
-                visited[curr] = true;
-                for(int i = 0; i<graph[curr].size(); i++){
-                    queue.add(graph[curr].get(i).dest);
+        if (graph == null) return;
+    
+        Stack<Integer> stk = new Stack<>(); // To maintain depth-wise traversal
+        boolean[] visited = new boolean[graph.length]; // To ensure that we don't revisit a node that has already been visited
+    
+        stk.push(v);
+    
+        while (!stk.isEmpty()) {
+            v = stk.pop();
+    
+            // Check if the node has already been visited
+            if (!visited[v]) {
+                visited[v] = true; // Mark as visited
+                System.out.print(v + " "); // Print the current node
+    
+                // Push neighbors onto the stack in reverse order
+                for (int i = graph[v].size() - 1; i >= 0; i--) {
+                    Edge e = graph[v].get(i);
+                    if (!visited[e.dest]) { // Only push if not visited
+                        stk.push(e.dest);
+                    }
                 }
             }
         }
     }
-    
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the number of vertices: ");
@@ -128,6 +163,11 @@ class Graphs{
 
         System.out.println("BFS Traversal: ");
         bfs(graph, 0);
+        
+        System.out.println();
+        System.out.println("DFS Traversal: ");
+        dfs(graph, 0);
+        
         input.close();
     }
 }
