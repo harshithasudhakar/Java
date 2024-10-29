@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 class SmallerNumbersThanCurrentNumber {
     public static int[] checksmallerNumbersThanCurrent(int[] nums) {
         int count = 0;
