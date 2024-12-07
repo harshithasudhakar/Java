@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 class FibonacciSeries{
 	void fib(int n){
-		int t1=1;
+		int t1=0;
 		int t2=1;
-		int t3=2;
-		System.out.println("The series is: 1, 1, 2...");
+		int t3=1;
+		System.out.println("The series is: 0, 1, 1...");
 		for(int i=3;i<n;i++){
 			t3=t2+t1;
 			t1=t2;
