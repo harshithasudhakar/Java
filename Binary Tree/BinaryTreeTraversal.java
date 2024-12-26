@@ -1,4 +1,5 @@
 // For complete binary trees
+// Recursive approach
 
 import java.util.Scanner;
 
