@@ -15,6 +15,15 @@ class Node{
     }
 }
 
+class Pair{
+    Node node;
+    int hd;
+    Pair(Node node, int hd){
+        this.node = node;
+        this.hd = hd;
+    }
+}
+
 class TopViewOfBT{
     static Node root;
     static Queue<Node> queue = new LinkedList<>(); //queue is only responsible for tracking nodes whose children need processing.
@@ -38,7 +47,9 @@ class TopViewOfBT{
         }
     }
 
-    static ArrayList<Integer> topView(Node root){ //needa incorporate depth tracking to ensure that shallower nodes are processed porperly and not overshadowed.
+    /*
+    DFS Approach, needa incorporate depth tracking
+    static ArrayList<Integer> topViewOfBT(Node root){
         int hd = 0;
         TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>(); //TreeMap over HashMap at it sorts the hd
         dfs(root, hd, map);
@@ -58,18 +69,48 @@ class TopViewOfBT{
             map.put(hd, root.val);
         }
         dfs(root.left, hd-1, map);
-        //System.out.print(" " + root.val);
+        // System.out.print(" " + root.val);
         dfs(root.right, hd+1, map);
     }
+    */
 
-    static void preorder(Node root){ // Root -> Left -> Right
+    static ArrayList<Integer> topViewOfBT(Node root){
+
+        int hd = 0; //Horizontal distance
+        Queue<Pair> q = new LinkedList<>();
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        bfs(root, q, hd, map);
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int ele : map.keySet()){
+            System.out.println(map.get(ele));
+            list.add(map.get(ele));
+        }
+        return list;
+    }
+
+    static void bfs(Node root, Queue<Pair> q, int hd, TreeMap<Integer, Integer> map){
+
         if(root == null){
             return;
         }
+        
+        q.add(new Pair(root, 0));
 
-        System.out.print(" " + root.val);
-        preorder(root.left);
-        preorder(root.right);
+        while(!q.isEmpty()){
+            Pair ele = q.poll();
+
+            if(!map.containsKey(hd)){
+                map.put(ele.hd, ele.node.val);
+            }
+
+            if(ele.node.right != null){
+                q.add(new Pair(ele.node.right, ele.hd+1));
+            }
+            if(ele.node.left != null){
+                q.add(new Pair(ele.node.left, ele.hd-1));
+                hd -= 1;
+            }
+        }
     }
 
     public static void main(String[] args){
@@ -83,13 +124,11 @@ class TopViewOfBT{
         }
         
         insert(nodes);
-        System.out.println("Pre-order:");
-        preorder(root);
-        System.out.println();
+        
         //System.out.println("DFS:");
         //dfs(root);
         System.out.println("Top view of a BT: ");
-        topView(root);
+        topViewOfBT(root);
 
         input.close();
     }
