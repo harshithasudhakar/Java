@@ -10,11 +10,11 @@ class Node {
     }
 }
 
-class BitonicDLL {
+class SortBitonicDLL {
     private Node head;
     private Node tail;
 
-    public BitonicDLL() {
+    public SortBitonicDLL() {
         this.head = null;
         this.tail = null;
     }
@@ -135,7 +135,7 @@ class BitonicDLL {
 
 public class Main {
     public static void main(String[] args) {
-        BitonicDLL dll = new BitonicDLL();
+        SortBitonicDLL dll = new SortBitonicDLL();
 
         dll.append(1);
         dll.append(3);
