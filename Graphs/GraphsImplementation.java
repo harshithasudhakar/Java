@@ -18,12 +18,12 @@ class GraphsImplementation{
     }
 
     static void addEdge(ArrayList<ArrayList> graph, Edge e){
-        if(graph.get(e.src) != null){
+        if((0 <= e.src) && (e.src <= graph.size())){
             graph.get(e.src).add(e.dest);
             System.out.println("src : " + e.src + " dest: " +e.dest);
         }
         else{
-            System.out.println("Node not in graph, enter a valid source.");
+            System.out.println("Node out of graph bounds, enter a valid source.");
         }
     }
 
