@@ -19,26 +19,28 @@ class LeftViewOfBTUsingDFS{
     static Queue<Node> q = new LinkedList<>();
 
     static void buildTree(int[] nodes){
-        if(nodes.length == 0) return;
+        if(nodes.length == 0|| nodes[0] == -1) return;
         root = new Node(nodes[0]);
         q.add(root);
         int i = 1;
 
-        while(!q.isEmpty()){
+        while(!q.isEmpty() && i<nodes.length){
             Node current = q.poll();
-            if(i<nodes.length && nodes[i] != -1){
+            if(nodes[i] != -1){
                 if(current.left == null){
-                    current.left = new Node(nodes[i++]);
+                    current.left = new Node(nodes[i]);
                     q.add(current.left);
                 }
             }
+            i++;
 
-            if(i<nodes.length && nodes[i] != -1){
+            if(nodes[i] != -1){
                 if(current.right == null){
-                    current.right = new Node(nodes[i++]);
+                    current.right = new Node(nodes[i]);
                     q.add(current.right);
                 }
             }
+            i++;
         }
     }
 
