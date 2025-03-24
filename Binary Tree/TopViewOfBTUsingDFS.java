@@ -21,17 +21,21 @@ class TopViewOfBTUsingDFS{
     static Queue<Node> q = new LinkedList<>();
 
     static void buildTree(int[] nodes){
+        if(nodes.length == 0) return;
         root = new Node(nodes[0]);
         q.add(root);
         int i = 1;
 
-        Node current = root;
         while(!q.isEmpty()){
-            if(i<nodes.length){
+            Node current = q.poll();
+            if(i<nodes.length && nodes[i] != -1){
                 if(current.left == null){
                     current.left = new Node(nodes[i++]);
                     q.add(current.left);
                 }
+            }
+
+            if(i<nodes.length && nodes[i] != -1){
                 if(current.right == null){
                     current.right = new Node(nodes[i++]);
                     q.add(current.right);
@@ -49,17 +53,17 @@ class TopViewOfBTUsingDFS{
         }
     }
 
-    static void dfs(Node root, Map<Integer, int[]> map, int hd, int l){
+    static void dfs(Node root, Map<Integer, int[]> map, int hd, int level){
         if(root == null){
             return;
         }
 
-        if(!map.containsKey(hd) || map.get(hd)[1] > l){
+        if(!map.containsKey(hd) || map.get(hd)[1] > level){
             map.put(hd, new int[]{root.val, l});
         }
 
-        dfs(root.left, map, hd-1, l+1);
-        dfs(root.right, map, hd+1, l+1);
+        dfs(root.left, map, hd-1, level+1);
+        dfs(root.right, map, hd+1, level+1);
     }
 
     public static void main(String[] args){
