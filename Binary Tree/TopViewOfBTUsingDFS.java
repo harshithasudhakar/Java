@@ -45,7 +45,7 @@ class TopViewOfBTUsingDFS{
     }
 
     static void topview(Node root){
-        Map<Integer, int[]> map = new TreeMap<>();
+        Map<Integer, int[]> map = new TreeMap<>(); //{hd: [node.val, level]}
         dfs(root, map, 0, 0);
         System.out.print("Top view: ");
         for(int[] pairs : map.values()){
