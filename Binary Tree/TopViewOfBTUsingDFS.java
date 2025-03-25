@@ -62,7 +62,7 @@ class TopViewOfBTUsingDFS{
 
         if(!map.containsKey(hd) || map.get(hd)[1] > level){ // we are checking the level value at the same hd in the map. 
                                                             //if the level value we are processing is smaller than the one already in map, we will put in the map
-            map.put(hd, new int[]{root.val, l});
+            map.put(hd, new int[]{root.val, level});
         }
 
         dfs(root.left, map, hd-1, level+1);
