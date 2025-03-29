@@ -57,10 +57,7 @@ class VerticalOrderTraversalDFS { // Top-view approach
         map.putIfAbsent(hd, new ArrayList<>());
         map.get(hd).add(root.val);
 
-        // Process left subtree
         dfs(root.left, map, hd - 1, level + 1);
-
-        // Process right subtree
         dfs(root.right, map, hd + 1, level + 1);
     }
 
