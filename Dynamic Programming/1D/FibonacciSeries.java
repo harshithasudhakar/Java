@@ -42,7 +42,7 @@ class FibonacciSeries { // memoization and tabulation approaches
         return memoization(dp, n);
     }
     
-    static long memoization(long[] dp, int n){
+    static long memoization(long[] dp, int n){ // TC: O(N) ; SC: O(N)+O(N) = O(2N) = O(N)
         if(n<=1){
             return n;
         }
@@ -54,7 +54,7 @@ class FibonacciSeries { // memoization and tabulation approaches
         return dp[n] = (memoization(dp, n-1) + memoization(dp, n-2)) % MOD;
     }
 
-    static long bottomUp(int n) {
+    static long bottomUp(int n) { 
         if (n == 0) return 0;
         if (n == 1) return 1;
         
@@ -66,4 +66,17 @@ class FibonacciSeries { // memoization and tabulation approaches
         }
         return dp[n];
     }
+
+    static int spaceOptimized(int n){
+        int prev1 = 0, prev2 = 1;
+        int result = 0;
+        for(int i = 0; i<n; i++){
+            result = prev1 + prev2;
+            prev1 = prev2;
+            prev2 = result;
+        }
+
+        return result;
+    }
+    
 }
