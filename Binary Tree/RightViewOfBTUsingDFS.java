@@ -22,23 +22,23 @@ class RightViewOfBTUsingDFS{
         if(nodes.length == 0) return;
         root = new Node(nodes[0]);
         q.add(root);
-        int i = 1;
+        int i = 1; // to ensure that the node we are processing in the array is
+                   // within the bounds of the array
 
         while(!q.isEmpty() && i<nodes.length){
             Node current = q.poll();
-            if(nodes[i] != -1){
-                if(current.left == null){
-                    current.left = new Node(nodes[i]);
-                    q.add(current.left);
-                }
+            
+            // Process left child
+            if (i < nodes.length && nodes[i] != -1) {
+                current.left = new Node(nodes[i]);
+                q.add(current.left);
             }
             i++;
 
-            if(nodes[i] != -1){
-                if(current.right == null){
-                    current.right = new Node(nodes[i]);
-                    q.add(current.right);
-                }
+            // Process right child
+            if (i < nodes.length && nodes[i] != -1) {
+                current.right = new Node(nodes[i]);
+                q.add(current.right);
             }
             i++;
         }
