@@ -1,6 +1,6 @@
 import java.util.*;
 
-class BellmanFordAlgorithm{ //Shortest distance from every node to all other vertices
+class BellmanFordAlgorithm{ //Shortest distance from source node to all other vertices //dp 
     static class Edge{
         int src;
         int dest;
