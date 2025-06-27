@@ -1,4 +1,4 @@
-class AssignCookies {
+class AssignCookies { // Greedy + 2-pointer approach
     public int findContentChildren(int[] g, int[] s) {
         
         Arrays.sort(g);
