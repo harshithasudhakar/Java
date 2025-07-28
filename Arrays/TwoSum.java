@@ -1,27 +1,32 @@
-import java.util.Scanner;
-
 class TwoSum {
-    
-    public static int[] checkTwoSum(int[] nums, int target) {
-        for(int i=0; i <nums.length; i++){
-            for(int j= i+1; j<nums.length; j++){
-                if(nums[i]+nums[j]==target){
-                    int[] arr = {nums[i],nums[j]};
-                    return arr;
+    public int[] twoSumBrute(int[] nums, int target) { // brute-force O(n^2) time
+        int n = nums.length;
+        int[] result = new int[2];
+        for(int i = 0; i<n; i++){
+            for(int j = 0; j<n; j++){
+                if((nums[i]+nums[j]) == target && (i!=j)){
+                    result[0] = i;
+                    result[1] = j;
+                    return result;
                 }
             }
         }
-        throw new IllegalArgumentException("No two-sum solution");
     }
 
-    public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-        int target = input.nextInt();
-        int n = input.nextInt();
-        int[] nums = new int[n];
-        for(int i=0; i<n; i++){
-            nums[i] = input.nextInt();
+  public int[] twoSumHash(int[] nums, int target) { // 1-Hash approach O(n) time
+        Map<Integer, Integer> map = new HashMap<>();
+        int[] result = new int[2];
+
+        for(int i = 0; i<nums.length; i++){
+            int complement = target-nums[i];
+            if(map.containsKey(complement) && map.get(complement)!= i){
+                result[0] = i;
+                result[1] = map.get(complement);
+                return result;
+            }
+            map.put(nums[i], i);
         }
-        checkTwoSum(nums, target);
-    }
+  }
+  
+  return result;
 }
