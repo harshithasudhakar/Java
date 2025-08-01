@@ -1,4 +1,5 @@
 class TwoSum {
+    /*
     public int[] twoSumBrute(int[] nums, int target) { // Brute-force
         Map<Integer, Integer> map = new HashMap<>();
         int[] res = new int[2];
@@ -15,6 +16,7 @@ class TwoSum {
 
         return res;
     }
+    */
 
     public int[] twoSumHash(int[] nums, int target) { // 1-Hash approach
         Map<Integer, Integer> map = new HashMap<>();
