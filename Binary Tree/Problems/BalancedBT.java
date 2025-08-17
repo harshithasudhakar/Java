@@ -13,20 +13,32 @@
  *     }
  * }
  */
-class CheckIsBalanced {
+class BalancedBT {
     public boolean isBalanced(TreeNode root) {
         if(root == null){
             return true;
         }
-        return Math.abs(height(root.left) - height(root.right)) <= 1 && isBalanced(root.right) && isBalanced(root.left);
+        if(dfs(root) == -1){
+            return false;
+        }
+
+        return true;
     }
 
-    int height(TreeNode root){
-        if(root == null){
+    int dfs(TreeNode node){
+        if(node == null){
             return 0;
         }
-        int leftHeight = height(root.left);
-        int rightHeight = height(root.right);
-        return 1+Math.max(leftHeight, rightHeight);
+
+        int left = dfs(node.left);
+        int right = dfs(node.right);
+
+        if (left == -1 || right == -1) return -1;
+
+        if(Math.abs(left - right) > 1){
+            return -1;
+        }
+
+        return 1+Math.max(left, right);
     }
 }
