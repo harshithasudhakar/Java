@@ -1,4 +1,4 @@
-class ContainsDuplicateII {
+class ContainsDuplicateII { // Hash Map approach
     public boolean containsNearbyDuplicate(int[] nums, int k) {
 
         Map<Integer, Integer> map = new TreeMap<>();
