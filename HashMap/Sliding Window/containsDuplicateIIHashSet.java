@@ -1,4 +1,4 @@
-class containsDuplicateHashSet {
+class containsDuplicateIIHashSet {
     public boolean containsNearbyDuplicateHashSet(int[] nums, int k) { // Optimal Solution using HashSet
 
         HashSet<Integer> set = new HashSet<>();
