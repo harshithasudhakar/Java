@@ -1,36 +1,28 @@
-import java.util.Scanner;
-
-class MaxConsecutiveOnes{
-    public static int findMaxConsecutiveOnes(int[] nums) {
-        int max = 0;
-        int count = 1;
-        if(nums[0]==1 && nums.length==1){
-            return 1;
+class MaxConsecutiveOnes {
+    public int findMaxConsecutiveOnes(int[] nums) {
+        if(nums.length == 0){
+            return 0;
         }
-        for(int i = 0; i<nums.length-1; i++){
-            if(nums[i]==nums[i+1]){
-                count+=1;            
+
+        if(nums.length == 1){
+            return nums[0];
+        }
+
+        int max = 0;
+
+        int count = 0;
+
+        for(int i = 0; i<nums.length; i++){
+            if(nums[i] == 1){
+                count += 1;
             }
             else{
-                count = 1;
+                max = Math.max(max, count);
+                count = 0;
             }
-            if(count>max){
-                max = count;
-            }
+            max = Math.max(max, count);
         }
-        return max;
-    }
 
-    public static void main(String[] args){
-        Scanner input = new Scanner(System.in);
-        int n = input.nextInt();
-        int[] nums = new int[n];
-        for(int i=0; i<n; i++){
-            int e = input.nextInt();
-            if(e==1 || e==0){
-                nums[i] = e;
-            }
-        }
-        findMaxConsecutiveOnes(nums);
+        return max;
     }
 }
